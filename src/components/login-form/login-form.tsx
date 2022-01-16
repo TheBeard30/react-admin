@@ -2,12 +2,15 @@ import React from "react";
 import {Button, Checkbox, Form, Input} from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './login-form.module.less';
+import {useNavigate} from "react-router-dom";
 
 export function LoginForm() {
 
+  const navigate = useNavigate();
 
-  const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+  const onFinish = (values: {[p: string]: any}) => {
+    console.log(values);
+    setTimeout(() => navigate('/home'),1000);
   };
 
 
